@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { brandConfig } from "@/config/brand";
 
 /**
@@ -8,10 +9,10 @@ import { brandConfig } from "@/config/brand";
  */
 export function LoginPage() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,#dbeafe,transparent_32%),linear-gradient(135deg,#f8fafc,#eef2ff)] px-6 py-8">
-      <div className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <main className="min-h-screen bg-[var(--background)] px-6 py-8">
+      <div className="mx-auto grid min-h-[calc(100vh-4rem)] w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]"><div className="fixed left-6 top-6 z-20"><ThemeToggle /></div>
         <section className="space-y-8">
-          <div className="inline-flex items-center gap-3 rounded-full border border-blue-900/10 bg-white/70 px-4 py-2 text-sm font-medium text-[var(--nexus-primary)] shadow-sm backdrop-blur">
+          <div className="inline-flex items-center gap-3 rounded-full border border-blue-900/10 bg-[var(--nexus-surface)]/70 px-4 py-2 text-sm font-medium text-[var(--nexus-primary)] shadow-sm backdrop-blur">
             <span className="h-2.5 w-2.5 rounded-full bg-[var(--nexus-accent)]" />
             White Label Business Platform
           </div>
@@ -20,7 +21,7 @@ export function LoginPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--nexus-accent)]">
               {brandConfig.customerName}
             </p>
-            <h1 className="text-5xl font-bold tracking-tight text-slate-950 md:text-6xl">
+            <h1 className="text-5xl font-bold tracking-tight text-[var(--foreground)] md:text-6xl">
               {brandConfig.productName}
             </h1>
             <p className="text-xl font-medium text-[var(--nexus-primary)]">
@@ -34,19 +35,19 @@ export function LoginPage() {
 
           <div className="grid max-w-2xl gap-4 sm:grid-cols-3">
             <Card className="p-5">
-              <p className="text-2xl font-bold text-slate-950">Core</p>
+              <p className="text-2xl font-bold text-[var(--foreground)]">Core</p>
               <p className="mt-2 text-sm text-[var(--nexus-muted)]">
                 Unified business foundation.
               </p>
             </Card>
             <Card className="p-5">
-              <p className="text-2xl font-bold text-slate-950">Modules</p>
+              <p className="text-2xl font-bold text-[var(--foreground)]">Modules</p>
               <p className="mt-2 text-sm text-[var(--nexus-muted)]">
                 CRM, Projects, Finance, HR.
               </p>
             </Card>
             <Card className="p-5">
-              <p className="text-2xl font-bold text-slate-950">License</p>
+              <p className="text-2xl font-bold text-[var(--foreground)]">License</p>
               <p className="mt-2 text-sm text-[var(--nexus-muted)]">
                 Plans, trials, and access.
               </p>
@@ -59,7 +60,7 @@ export function LoginPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--nexus-accent)]">
               Secure Access
             </p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950">
+            <h2 className="mt-3 text-3xl font-bold text-[var(--foreground)]">
               Sign in to NexusOS
             </h2>
             <p className="mt-3 text-sm leading-6 text-[var(--nexus-muted)]">

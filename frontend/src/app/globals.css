@@ -45,6 +45,25 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+
+[data-theme="dark"] {
+  --background: #080b18;
+  --foreground: #f8fafc;
+
+  --nexus-primary: #8b7cff;
+  --nexus-primary-dark: #6d5dfc;
+  --nexus-accent: #d7b56d;
+
+  --nexus-surface: #101426;
+  --nexus-surface-soft: #151a2e;
+  --nexus-border: #26304a;
+
+  --nexus-muted: #aab3c5;
+  --nexus-success: #22c55e;
+  --nexus-warning: #f59e0b;
+  --nexus-danger: #ef4444;
+}
+
 button,
 input {
   font: inherit;
