@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { THEME_STORAGE_KEY, type ThemeMode } from "@/config/theme";
+import { THEME_STORAGE_KEY, type ThemeMode } from "@/core/theme/theme";
 
 type ActiveTheme = "light" | "dark";
 

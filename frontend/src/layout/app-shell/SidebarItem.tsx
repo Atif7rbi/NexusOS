@@ -1,12 +1,12 @@
-import type { NavigationItem } from "@/config/navigation/mainNavigation";
+import type { ModuleDefinition } from "@/core/registry/moduleRegistry";
 
 type SidebarItemProps = {
-  item: NavigationItem;
+  item: ModuleDefinition;
   isActive?: boolean;
 };
 
 /**
- * Renders a single sidebar navigation item.
+ * Renders a single sidebar module item.
  */
 export function SidebarItem({ item, isActive = false }: SidebarItemProps) {
   return (
@@ -23,12 +23,6 @@ export function SidebarItem({ item, isActive = false }: SidebarItemProps) {
         <span aria-hidden="true">{item.icon}</span>
         <span>{item.title}</span>
       </span>
-
-      {item.badge ? (
-        <span className="rounded-full bg-white/20 px-2 py-0.5 text-[11px]">
-          {item.badge}
-        </span>
-      ) : null}
     </a>
   );
 }
