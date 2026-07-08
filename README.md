@@ -20,10 +20,6 @@ Build one platform capable of managing:
 - Reports
 - Notifications
 
-## First Client
-
-UFQ Real Estate Development
-
 ## Technology Stack
 
 Frontend:
