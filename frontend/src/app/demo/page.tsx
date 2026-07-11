@@ -67,7 +67,7 @@ function Dashboard({ language, onUnavailable }: { language: Language; onUnavaila
           </div>
           <div className="mt-8 flex h-56 items-end gap-3 rounded-xl bg-slate-50 p-4 dark:bg-black/10">
             {[52, 68, 58, 78, 72, 92].map((height, index) => (
-              <div key={index} className="flex flex-1 items-end justify-center gap-1.5">
+              <div key={index} className="flex h-full flex-1 items-end justify-center gap-1.5">
                 <div className="w-2/5 rounded-t-md bg-slate-300 dark:bg-slate-600" style={{ height: `${Math.max(20, height - 25)}%` }} />
                 <div className="w-2/5 rounded-t-md bg-indigo-500" style={{ height: `${height}%` }} />
               </div>
