@@ -33,7 +33,7 @@ export const navigation: Array<{ id: DemoSection; label: string; icon: string }>
   { id: "sales", label: "المبيعات", icon: "↗" },
   { id: "accounting", label: "المحاسبة", icon: "◫" },
   { id: "expenses", label: "المصروفات", icon: "↘" },
-  { id: "employees", label: "الموظفون", icon: "♙" },
+  { id: "employees", label: "الموظفين", icon: "♙" },
   { id: "tasks", label: "المهام", icon: "✓" },
   { id: "files", label: "الملفات", icon: "▤" },
   { id: "reports", label: "التقارير", icon: "◒" },
