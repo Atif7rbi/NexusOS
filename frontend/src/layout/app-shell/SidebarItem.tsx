@@ -1,12 +1,12 @@
-import type { ModuleDefinition } from "@/core/registry/moduleRegistry";
+import type { NavigationItem } from "@/core/navigation/navigation";
 
 type SidebarItemProps = {
-  item: ModuleDefinition;
+  item: NavigationItem;
   isActive?: boolean;
 };
 
 /**
- * Renders a single sidebar module item.
+ * Renders a single sidebar navigation item.
  */
 export function SidebarItem({ item, isActive = false }: SidebarItemProps) {
   return (

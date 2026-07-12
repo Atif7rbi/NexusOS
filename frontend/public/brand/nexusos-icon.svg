@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+<title>NexusOS logo mark</title>
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#A855F7"/>
+    <stop offset="0.48" stop-color="#7C3AED"/>
+    <stop offset="1" stop-color="#2563EB"/>
+  </linearGradient>
+  <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5B21B6"/>
+    <stop offset="1" stop-color="#1D4ED8"/>
+  </linearGradient>
+</defs>
+<path d="M48 55c0-8 4-15 11-19l45-26c10-6 22 1 22 13v63l-28 16V60L76 73v110l-28 16V55z" fill="url(#g1)"/>
+<path d="M208 57c0-8-4-15-11-19l-44-26c-10-6-23 1-23 13v62l28 16V62l22 13v108l-22 13-58-34v-35l58 34 22-13V75l28-16v-2z" fill="url(#g2)"/>
+<path d="M99 126l29-17 58 34v35l-29 17-58-34z" fill="url(#g1)"/>
+</svg>
