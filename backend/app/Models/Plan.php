@@ -16,7 +16,8 @@ use Illuminate\Support\Carbon;
  * @property string $id
  * @property string $name
  * @property string $code
- * @property string $billing_cycle
+ * @property string $billing_period_unit
+ * @property int|null $billing_period_count
  * @property string|null $description
  * @property string $price
  * @property string $currency
@@ -30,15 +31,27 @@ class Plan extends Model
 {
     use HasUlids;
 
-    public const BILLING_MONTHLY = 'monthly';
-    public const BILLING_YEARLY = 'yearly';
+    public const BILLING_PERIOD_MONTH = 'month';
+    public const BILLING_PERIOD_YEAR = 'year';
+    public const BILLING_PERIOD_LIFETIME = 'lifetime';
+
+    /**
+     * @var list<int>
+     */
+    public const ALLOWED_MONTH_COUNTS = [
+        1,
+        3,
+        6,
+        10,
+    ];
 
     protected $table = 'plans';
 
     protected $fillable = [
         'name',
         'code',
-        'billing_cycle',
+        'billing_period_unit',
+        'billing_period_count',
         'description',
         'price',
         'currency',
@@ -48,6 +61,7 @@ class Plan extends Model
     ];
 
     protected $casts = [
+        'billing_period_count' => 'integer',
         'price' => 'decimal:2',
         'max_users' => 'integer',
         'max_storage_mb' => 'integer',
@@ -96,7 +110,10 @@ class Plan extends Model
      */
     public function scopeMonthly(Builder $query): Builder
     {
-        return $query->where('billing_cycle', self::BILLING_MONTHLY);
+        return $query->where(
+            'billing_period_unit',
+            self::BILLING_PERIOD_MONTH
+        );
     }
 
     /**
@@ -105,6 +122,36 @@ class Plan extends Model
      */
     public function scopeYearly(Builder $query): Builder
     {
-        return $query->where('billing_cycle', self::BILLING_YEARLY);
+        return $query->where(
+            'billing_period_unit',
+            self::BILLING_PERIOD_YEAR
+        );
+    }
+
+    /**
+     * @param Builder<self> $query
+     * @return Builder<self>
+     */
+    public function scopeLifetime(Builder $query): Builder
+    {
+        return $query->where(
+            'billing_period_unit',
+            self::BILLING_PERIOD_LIFETIME
+        );
+    }
+
+    public function isMonthly(): bool
+    {
+        return $this->billing_period_unit === self::BILLING_PERIOD_MONTH;
+    }
+
+    public function isYearly(): bool
+    {
+        return $this->billing_period_unit === self::BILLING_PERIOD_YEAR;
+    }
+
+    public function isLifetime(): bool
+    {
+        return $this->billing_period_unit === self::BILLING_PERIOD_LIFETIME;
     }
 }
